@@ -1,0 +1,97 @@
+body {
+  margin: 0; }
+
+.header {
+  background: steelblue;
+  color: white;
+  height: 50px;
+  width: 100%;
+  text-align: center; }
+
+.content {
+  width: 80%;
+  margin: auto;
+  color: #222222; }
+
+table {
+  border-collapse: collapse;
+  border: 1px solid #38678f;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
+
+thead {
+  background: steelblue;
+  color: white;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  text-shadow: 0 1px 0 #38678f;
+  border: 1px solid #38678f; }
+
+th, td {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+th {
+  border-right: 1px solid #38678f;
+  padding-right: 5px;
+  padding-left: 5px; }
+
+td {
+  border-right: 1px solid #555555; }
+
+th:last-child,
+td:last-child {
+  border-right: 0; }
+
+tr {
+  border-bottom: 1px solid #555555; }
+
+table.fixed {
+  width: 800px; }
+
+table.scoll {
+  width: 800px;
+  overflow-x: scroll; }
+
+table.percent {
+  max-width: 100%; }
+
+table.link {
+  position: relative;
+  overflow: hidden; }
+
+@media (max-width: 992px) {
+  table.link {
+    font-size: 50%; }
+
+  table.link tbody:before {
+    content: "Table: Tap to View";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.6em;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 100; } }
+table.hide {
+  /* Small devices */
+  /* Medium devices */
+  /* Large devices */ }
+  table.hide .age-col {
+    display: none; }
+  table.hide .agree-col {
+    display: none; }
+  table.hide .text-col {
+    display: none; }
+  @media (min-width: 768px) {
+    table.hide .agree-col {
+      display: table-cell; } }
+  @media (min-width: 992px) {
+    table.hide .age-col {
+      display: table-cell; } }
+  @media (min-width: 1200px) {
+    table.hide .text-col {
+      display: table-cell; } }

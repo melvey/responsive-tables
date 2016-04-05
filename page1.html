@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<title>My Responsive Page</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link rel="stylesheet" type="text/css" href="tableLink/tableLink.css"/>
+	</head>
+	<body>
+		<div class="header">
+			<h1>My Responsive Page</h1>
+		</div>
+		<div class="content">
+			<h2>An interesting article</h2>
+			<p>Lorem ipsum dolor sit amet, ex usu apeirian deterruisset, eligendi petentium consectetuer cu vix. Vis discere efficiantur te. Vis augue ancillae percipitur eu, dicit copiosae vix id, eum no alterum sanctus percipit. Vel ei alia prima iisque, cu mei minim singulis. Case apeirian eos eu. Mea at elit iudico ridens, eum cu persecuti consectetuer.</p>
+			<p>In vix omnis signiferumque, vel ad voluptua hendrerit incorrupte. Pri verear iudicabit ne, eos officiis recusabo ex. Per movet salutatus ex, cum ne liber laboramus. Eirmod tamquam reprehendunt ei vim, viderer sanctus explicari cu nec, sed no deleniti pertinax sententiae. Augue civibus cu has, et vel petentium corrumpit. Sea id probo nullam scriptorem, at aeque paulo tamquam nam, saepe appetere has an. Nam ei nullam diceret dissentiet.</p>
+			<table class="linkTable">
+				<thead>
+					<tr>
+						<th class="title-col">Title</th>
+						<th class="age-col">Age</th>
+						<th class="cost-col">Cost</th>
+						<th class="agree-col">Agrees</th>
+						<th class="code-col">Code</th>
+						<th class="text-col">Say Something</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="title-col">First Row</td>
+						<td class="age-col">12</td>
+						<td class="cost-col">$324.32</td>
+						<td class="agree-col">Yes</td>
+						<td class="code-col">T23X4</td>
+						<td class="text-col">This is some really interesting text that fits nicely in a big table. How does it look in a little table?</td>
+					</tr>
+					<tr>
+						<td class="title-col">Second Row</td>
+						<td class="age-col">82</td>
+						<td class="cost-col">$8.50</td>
+						<td class="agree-col">Yes</td>
+						<td class="code-col">9PY43J</td>
+						<td class="text-col">Some other text to fit in here.</td>
+					</tr>
+					<tr>
+						<td class="title-col">Third Row</td>
+						<td class="age-col">25</td>
+						<td class="cost-col">$79.43</td>
+						<td class="agree-col">No</td>
+						<td class="code-col">OX9P0</td>
+						<td class="text-col">Just some short text.</td>
+					</tr>
+					<tr>
+						<td class="title-col">Fourth Row</td>
+						<td class="age-col">17</td>
+						<td class="cost-col">$128.00</td>
+						<td class="agree-col">Yes</td>
+						<td class="code-col">T23X9</td>
+						<td class="text-col">Last but not least some more text to fit in here. I hope it isn't too long.</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Mea eu minim dicam. Has cu quis mediocrem voluptaria. An possit vidisse volutpat pro, no his velit homero. Ei per unum melius oporteat, cu ancillae definitiones vix.</p>
+			<p>At purto nobis est, at eam quod commune. Ne eam nemore accumsan mediocritatem, te summo doming eos, usu denique adolescens definitiones te. Inermis partiendo constituam ei usu. No nam sale essent, porro oratio maiorum cum at. Ei partem alterum quaestio est, ne sit quot omnes. Ad aperiri detraxit per.</p>
+			<p>No velit animal regione nam, consetetur adipiscing scripserit vim ei. Quem clita cum ad, noster molestiae no ius, ea vis dico nostrud pertinacia. Vis agam munere verterem ut, magna dolore expetendis et his. Usu brute libris viderer at, te regione patrioque sententiae eam, ei illud ponderum mei. Vis iudico aeterno quaerendum te. Utamur singulis liberavisse ad pri, in dicta affert urbanitas mei. Diam fierent an sed, ex verear utamur offendit pri, sed tempor graeci id.</p>
+		</div>
+		<div class="footer">
+			<p>Some footer text</p>
+		</div>
+		<script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+		<script src="tableLink/jquery.tableLink.js"></script>
+		<script>
+			$(document).ready(function() {
+				console.log('Hey');
+				$('.linkTable').tableLink({hide: '80%'});
+			});
+		</script>
+	</body>
+</html>
