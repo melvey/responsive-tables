@@ -1,58 +1,67 @@
 (function($) {
+	'use strict';
 
-	function parseMinSize(minSize) {
-		var minVal = 0;
-		var type = null;
+	var hideClass = 'tablelink-hide';
+	var modalBgClass = 'tablelink-bg';
 
-		var matches = /(\d*)px/.exec(minSize);
-		if(matches) {
-			return {val: matches[1], type: 'px'};
+	/**
+	 * Show the full size table in a modal dialog
+	 * @param {DOMElement} table The table to show
+	 * @param {int} fontSize the font size in pixes to default to
+	 * @return {DOMElement} The modal
+	 */
+	function showModal(table, fontSize) {
+		var modalBg = $('<div></div>').addClass(modalBgClass);
+		var newTable = $(table).clone().removeClass(hideClass).css('font-size', fontSize).width('');
+		modalBg.append(newTable);
+		$('body').append(modalBg);
+		modalBg.on('click', function() {
+			$('body').remove(modalBg);
+		});
+		return modalBg;
+	}
+
+	function rescaleTable(table, options) {
+		var parentWidth = table.parent().innerWidth();
+		var newWidth = options.origWidth > parentWidth ? parentWidth : options.origWidth;
+		var newFontSize = newWidth * options.textScale;
+		if(options.origTextSize && options.origTextSize < newFontSize) {
+			newFontSize = options.origTextSize;
 		}
-		matches = /(\d*)%/.exec(minSize);
-		if(matches) {
-			return {val: matches[1], type: '%'};
+		table.css('font-size', newFontSize + 'px');
+		table.css('width', newWidth + 'px');
+
+		var hide = newWidth <= options.hideWidth;
+		var isHidden = table.hasClass(hideClass);
+
+		if(hide && !isHidden) {
+			table.addClass(hideClass);
+			table.on('click', function() {
+				showModal(table, options.origTextSize || options.origWidth * options.textScale);
+			});
+		} else if(!hide && isHidden) {
+			table.removeClass(hideClass);
 		}
-		return null;
 	}
 	
 
 	$.fn.tableLink = function(options) {
 		options = options || {};
 		var thisTable = this;
-		var minVal = parseMinSize(options.hide);
+		var minVal = 0;
+		var matches = /(\d*)px/.exec(options.hide);
+		if(matches) {
+			minVal = matches[1];
+		}
 		if(!minVal) {
 			throw new Error('Invalid hide size');
 		}
+		var origWidth = this.innerWidth();
 		var origFontSize = parseInt(this.css('font-size'), 10);
-		var origTextScale = origFontSize / this.innerWidth();
+		var origTextScale = origFontSize / origWidth;
 		console.log('Font: ' + origFontSize + 'px, Scale: ' + origTextScale + ', Back: ' + (this.innerWidth() * origTextScale));
 		$(window).on('resize', function() {
-			var newFontSize = thisTable.innerWidth() * origTextScale;
-			newFontSize = newFontSize < origFontSize ? newFontSize  : origFontSize;
-			thisTable.css('font-size', newFontSize + 'px');
-			console.log(newFontSize);
-
-			let hide = false;
-			if(minVal.type === '%') {
-				console.log((newFontSize / origFontSize) + ',' + (minVal.val/100));
-				if((newFontSize / origFontSize) < (minVal.val / 100)) {
-					hide = true;
-				}
-			} else if(minVal.type === 'px') {
-				if($(window).innerWidth() < minVal.val) {
-					hide = true;
-				}
-			}
-
-			if(hide) {
-				thisTable.addClass('tablelink-hide');
-			} else {
-				thisTable.removeClass('tablelink-hide');
-			}
-
-			if(thisTable.outerWidth() > thisTable.parent().innerWidth()) {
-				console.log('Oops');
-			}
+			rescaleTable(thisTable, {origWidth: origWidth, textScale: origTextScale, hideWidth: minVal});
 		});
 		
 		return this;

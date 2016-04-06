@@ -30,6 +30,7 @@ table {
 	border-collapse: collapse;
 	border: 1px solid $base-dark;
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+	background-color: $background-color;
 }
 
 thead {
@@ -64,9 +65,12 @@ tr {
 table.fixed {
 	width: 800px;
 }
-table.scoll {
-	width: 800px;
+.table-container-scrollb{
+	max-width: 100%;
 	overflow-x: scroll;
+}
+table.scroll {
+	width: 800px;
 }
 table.percent {
 	max-width: 100%;
@@ -127,4 +131,8 @@ table.hide {
 			display: table-cell;
 		}
 	}
+}
+
+.linkTable {
+	width: 800px;
 }

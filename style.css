@@ -16,7 +16,8 @@ body {
 table {
   border-collapse: collapse;
   border: 1px solid #38678f;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background-color: white; }
 
 thead {
   background: steelblue;
@@ -49,9 +50,12 @@ tr {
 table.fixed {
   width: 800px; }
 
-table.scoll {
-  width: 800px;
+.table-container-scrollb {
+  max-width: 100%;
   overflow-x: scroll; }
+
+table.scroll {
+  width: 800px; }
 
 table.percent {
   max-width: 100%; }
@@ -95,3 +99,6 @@ table.hide {
   @media (min-width: 1200px) {
     table.hide .text-col {
       display: table-cell; } }
+
+.linkTable {
+  width: 800px; }
