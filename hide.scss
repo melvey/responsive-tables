@@ -1,0 +1,37 @@
+@import "vars";
+
+table.hide {
+	.title-col {}
+	.age-col {
+		display: none;
+	}
+	.cost-col {}
+	.agree-col {
+		display: none;
+	}
+	.code-col {}
+	.text-col {
+		display: none;
+	}
+
+	/* Small devices */
+	@media (min-width: $screen-sm-min) {
+		.agree-col {
+			display: table-cell;
+		}
+	}
+
+	/* Medium devices */
+	@media (min-width: $screen-md-min) {
+		.age-col {
+			display: table-cell;
+		}
+	}
+
+	/* Large devices */
+	@media (min-width: $screen-lg-min) {
+		.text-col {
+			display: table-cell;
+		}
+	}
+}

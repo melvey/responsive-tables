@@ -1,0 +1,26 @@
+@import "vars";
+
+@media (max-width: $screen-md-min) {
+	.collapseTable {
+		table, thead, tbody, th, td, tr {
+			display: block;
+		}
+
+		thead {
+			position: absolute;
+			top: -999999999px;
+			left: -999999999px;
+		}
+			
+
+		tbody td:before {
+			content: attr(data-th);
+			display: block;
+			text-align: center;
+		}
+		tbody td {
+			text-align: center;
+		}
+			
+	}
+}

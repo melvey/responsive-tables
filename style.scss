@@ -1,11 +1,4 @@
-$base-color: steelblue;
-$base-dark: darken($base-color, 10%);
-$background-color: white;
-$font-color: #222222;
-
-$screen-sm-min: 768px;
-$screen-md-min: 992px;
-$screen-lg-min: 1200px;
+@import "vars";
 
 body {
 	margin: 0;
@@ -75,64 +68,10 @@ table.scroll {
 table.percent {
 	max-width: 100%;
 }
-table.link {
-	position: relative;
-	overflow: hidden;
-}
-@media (max-width: $screen-md-min) {
-	table.link {
-		font-size: 50%;
-	}
-	table.link tbody:before {
-		content: "Table: Tap to View";
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		background: rgba(0,0,0,.6);
-		color: #fff;
-		font-weight: bold;
-		font-size: 1.6em;
-		text-align: center;
-		vertical-align: middle;
-		z-index: 100;
-	}
-}
-table.hide {
-	.title-col {}
-	.age-col {
-		display: none;
-	}
-	.cost-col {}
-	.agree-col {
-		display: none;
-	}
-	.code-col {}
-	.text-col {
-		display: none;
-	}
-
-	/* Small devices */
-	@media (min-width: $screen-sm-min) {
-		.agree-col {
-			display: table-cell;
-		}
-	}
-
-	/* Medium devices */
-	@media (min-width: $screen-md-min) {
-		.age-col {
-			display: table-cell;
-		}
-	}
-
-	/* Large devices */
-	@media (min-width: $screen-lg-min) {
-		.text-col {
-			display: table-cell;
-		}
-	}
-}
 
 .linkTable {
 	width: 800px;
 }
+
+@import "hide";
+@import "collapseTable";
