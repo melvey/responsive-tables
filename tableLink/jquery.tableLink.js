@@ -15,10 +15,10 @@
 		var newTable = $(table).clone().removeClass(hideClass).css('font-size', fontSize).width('');
 		modalBg.append(newTable);
 		$('body').append(modalBg);
-		modalBg.on('click', function(evt) {
+		modalBg.on('touchstart click', function(evt) {
 			var offset = newTable.offset();
-			var inX = evt.clientX > offset.left && evt.clientX < (offset.left + newTable.outerWidth());
-			var inY = evt.clientY > offset.top && evt.clientY < ( offset.top + newTable.outerHeight());
+			var inX = evt.clientX > offset.left && evt.clientX < offset.left + newTable.outerWidth();
+			var inY = evt.clientY > offset.top && evt.clientY < offset.top + newTable.outerHeight();
 			if(!inX || !inY) {
 				$(modalBg).remove();
 			}
@@ -38,13 +38,15 @@
 
 		var hide = newWidth <= options.hideWidth;
 		var isHidden = table.hasClass(hideClass);
+		var showModalEvt = function() {
+			showModal(table, options.origTextSize || options.origWidth * options.textScale);
+		};
 
 		if(hide && !isHidden) {
 			table.addClass(hideClass);
-			table.on('click', function() {
-				showModal(table, options.origTextSize || options.origWidth * options.textScale);
-			});
+			table.on('touchstart click', showModalEvt);
 		} else if(!hide && isHidden) {
+			table.off('touchstart click', showModalEvt);
 			table.removeClass(hideClass);
 		}
 	}
