@@ -15,8 +15,13 @@
 		var newTable = $(table).clone().removeClass(hideClass).css('font-size', fontSize).width('');
 		modalBg.append(newTable);
 		$('body').append(modalBg);
-		modalBg.on('click', function() {
-			$('body').remove(modalBg);
+		modalBg.on('click', function(evt) {
+			var offset = newTable.offset();
+			var inX = evt.clientX > offset.left && evt.clientX < (offset.left + newTable.outerWidth());
+			var inY = evt.clientY > offset.top && evt.clientY < ( offset.top + newTable.outerHeight());
+			if(!inX || !inY) {
+				$(modalBg).remove();
+			}
 		});
 		return modalBg;
 	}
@@ -64,6 +69,7 @@
 			rescaleTable(thisTable, {origWidth: origWidth, textScale: origTextScale, hideWidth: minVal});
 		});
 		
+		rescaleTable(thisTable, {origWidth: origWidth, textScale: origTextScale, hideWidth: minVal});
 		return this;
 	};
 }(jQuery));
