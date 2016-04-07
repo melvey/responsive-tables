@@ -21,6 +21,15 @@
 		tbody td {
 			text-align: center;
 		}
-			
+
+		tbody td:first-child {
+			background: $base-color;
+			color: white;
+			height: 50px;
+			width: 100%;
+			text-align: center;
+			text-shadow: 0 1px 0 $base-dark;
+			border: 1px solid $base-dark;
+		}
 	}
 }

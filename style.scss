@@ -14,10 +14,13 @@ body {
 }
 
 .content {
-	width: 80%;
-	margin: auto;
 	color: $font-color;
+	@media (min-width: $screen-md-min) {
+		width: 80%;
+		margin: auto;
+	}
 }
+
 
 table {
 	border-collapse: collapse;

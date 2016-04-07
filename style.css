@@ -9,9 +9,11 @@ body {
   text-align: center; }
 
 .content {
-  width: 80%;
-  margin: auto;
   color: #222222; }
+  @media (min-width: 992px) {
+    .content {
+      width: 80%;
+      margin: auto; } }
 
 table {
   border-collapse: collapse;
@@ -95,6 +97,12 @@ table.hide {
     display: block;
     text-align: center; }
   .collapseTable tbody td {
-    text-align: center; } }
-
-/*# sourceMappingURL=style.css.map */
+    text-align: center; }
+  .collapseTable tbody td:first-child {
+    background: steelblue;
+    color: white;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    text-shadow: 0 1px 0 #38678f;
+    border: 1px solid #38678f; } }
