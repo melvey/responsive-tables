@@ -20,6 +20,7 @@
 			var inX = evt.clientX > offset.left && evt.clientX < offset.left + newTable.outerWidth();
 			var inY = evt.clientY > offset.top && evt.clientY < offset.top + newTable.outerHeight();
 			if(!inX || !inY) {
+				$(modalBg).off();
 				$(modalBg).remove();
 			}
 		});
@@ -38,16 +39,22 @@
 
 		var hide = newWidth <= options.hideWidth;
 		var isHidden = table.hasClass(hideClass);
-		var showModalEvt = function() {
+		var showModalHandler = function(evt) {
+			evt.preventDefault();
+			evt.stopPropagation();
 			showModal(table, options.origTextSize || options.origWidth * options.textScale);
 		};
 
+		console.log(hide+','+isHidden);
 		if(hide && !isHidden) {
 			table.addClass(hideClass);
-			table.on('touchstart click', showModalEvt);
+			table.parent().on('touchstart click', '.'+hideClass, showModalHandler);
+			console.log('Making Hidden');
+			lastBindTime = Date.now();
 		} else if(!hide && isHidden) {
-			table.off('touchstart click', showModalEvt);
+			table.parent().off('touchstart click', '.'+hideClass); // This doesn't work if passed the handler - dunno why
 			table.removeClass(hideClass);
+			console.log('Unhide');
 		}
 	}
 	
