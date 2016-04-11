@@ -1,0 +1,60 @@
+doctype html
+html
+   head
+     title My Responsive Page
+     link(rel='stylesheet', type='text/css', href='style.css')
+     link(rel='stylesheet', type='text/css', href='tableLink/tableLink.css')
+   body
+     div.header
+       h1 My Responsive Page
+     div.content
+       h2 An interesting article
+      p Lorem ipsum dolor sit amet, ex usu apeirian deterruisset, eligendi petentium consectetuer cu vix. Vis discere efficiantur te. Vis augue ancillae percipitur eu, dicit copiosae vix id, eum no alterum sanctus percipit. Vel ei alia prima iisque, cu mei minim singulis. Case apeirian eos eu. Mea at elit iudico ridens, eum cu persecuti consectetuer.
+      p In vix omnis signiferumque, vel ad voluptua hendrerit incorrupte. Pri verear iudicabit ne, eos officiis recusabo ex. Per movet salutatus ex, cum ne liber laboramus. Eirmod tamquam reprehendunt ei vim, viderer sanctus explicari cu nec, sed no deleniti pertinax sententiae. Augue civibus cu has, et vel petentium corrumpit. Sea id probo nullam scriptorem, at aeque paulo tamquam nam, saepe appetere has an. Nam ei nullam diceret dissentiet.
+      table(class=className)
+        thead
+          tr
+            th.title-col City
+            th.country-col Country
+            th.pop-col Population
+            th.area-col Area
+            th.founded-col Founded/Settled
+            th.elevation-col Elevation
+        tbody
+          tr
+            td.title-col Darwin
+            td.country-col Australia
+            td.pop-col 146,245
+            td.area-col 112.01 km2
+            td.founded-col 1869
+            td.elevation-col 27.8 m
+          tr
+            td.title-col Kupang
+            td.country-col Indonesia
+            td.pop-col 349,344
+            td.area-col 180.27 km2
+            td.founded-col 1886
+            td.elevation-col 62 m
+          tr
+            td.title-col Dili
+            td.country-col Timor-Leste
+            td.pop-col 222,323
+            td.area-col 48.268 km2
+            td.founded-col 1520
+            td.elevation-col 11 m
+          tr
+            td.title-col Alice Springs
+            td.country-col Australia
+            td.pop-col 28,605
+            td.area-col 148 km2
+            td.founded-col 1872
+            td.elevation-col 545 m
+      p Mea eu minim dicam. Has cu quis mediocrem voluptaria. An possit vidisse volutpat pro, no his velit homero. Ei per unum melius oporteat, cu ancillae definitiones vix.
+      p At purto nobis est, at eam quod commune. Ne eam nemore accumsan mediocritatem, te summo doming eos, usu denique adolescens definitiones te. Inermis partiendo constituam ei usu. No nam sale essent, porro oratio maiorum cum at. Ei partem alterum quaestio est, ne sit quot omnes. Ad aperiri detraxit per.
+      p No velit animal regione nam, consetetur adipiscing scripserit vim ei. Quem clita cum ad, noster molestiae no ius, ea vis dico nostrud pertinacia. Vis agam munere verterem ut, magna dolore expetendis et his. Usu brute libris viderer at, te regione patrioque sententiae eam, ei illud ponderum mei. Vis iudico aeterno quaerendum te. Utamur singulis liberavisse ad pri, in dicta affert urbanitas mei. Diam fierent an sed, ex verear utamur offendit pri, sed tempor graeci id.
+      script(src='https://code.jquery.com/jquery-2.2.2.min.js')
+      script(src='tableLink/jquery.tableLink.js')
+      script(type='text/javascript').
+        $(document).ready(function() {
+          $('.linkTable').tableLink({hide: '600px'});
+        });
