@@ -19,7 +19,12 @@ var jadeData = [
 	},
 	{
 		title: 'page4',
-		className: 'linkTable'
+		className: 'linkTable',
+		scripts: [
+			'https://code.jquery.com/jquery-2.2.2.min.js',
+			'tableLink/jquery.tableLink.js'
+		],
+		injectScript: '$(document).ready(function() { $(".linkTable").tableLink({hide: "600px"}); });'
 	},
 	{
 		title: 'page5',
@@ -32,6 +37,13 @@ var jadeData = [
 	{
 		title: 'page7',
 		className: 'rotateTable'
+	},
+	{
+		title: 'page',
+		className: 'footable',
+		scripts: [
+			'vendor/footable/js/footable.js'
+		]
 	}
 ];
 

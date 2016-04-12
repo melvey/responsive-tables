@@ -1,4 +1,5 @@
 doctype html
+doctype html
 html
    head
      title My Responsive Page
@@ -54,9 +55,8 @@ html
       p Mea eu minim dicam. Has cu quis mediocrem voluptaria. An possit vidisse volutpat pro, no his velit homero. Ei per unum melius oporteat, cu ancillae definitiones vix.
       p At purto nobis est, at eam quod commune. Ne eam nemore accumsan mediocritatem, te summo doming eos, usu denique adolescens definitiones te. Inermis partiendo constituam ei usu. No nam sale essent, porro oratio maiorum cum at. Ei partem alterum quaestio est, ne sit quot omnes. Ad aperiri detraxit per.
       p No velit animal regione nam, consetetur adipiscing scripserit vim ei. Quem clita cum ad, noster molestiae no ius, ea vis dico nostrud pertinacia. Vis agam munere verterem ut, magna dolore expetendis et his. Usu brute libris viderer at, te regione patrioque sententiae eam, ei illud ponderum mei. Vis iudico aeterno quaerendum te. Utamur singulis liberavisse ad pri, in dicta affert urbanitas mei. Diam fierent an sed, ex verear utamur offendit pri, sed tempor graeci id.
-      script(src='https://code.jquery.com/jquery-2.2.2.min.js')
-      script(src='tableLink/jquery.tableLink.js')
-      script(type='text/javascript').
-        $(document).ready(function() {
-          $('.linkTable').tableLink({hide: '600px'});
-        });
+      if scripts
+        each script in scripts
+          script(src=script)
+      if injectScript
+        script(type='text/javascript')!= injectScript
