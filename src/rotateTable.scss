@@ -1,0 +1,21 @@
+@import "vars";
+
+@media (max-width: $screen-md-min) {
+	.rotateTable {
+		thead {
+			width: initial;
+		}
+		tr,
+	 	thead,
+		tbody	{
+			display: table-cell;
+		}
+		th, td {
+			display: block;
+			vertical-align: top;
+		}
+		tbody > tr > td:first-child {
+			font-weight: bold;
+		}
+	}
+}

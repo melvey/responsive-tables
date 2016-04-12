@@ -2,7 +2,13 @@
 
 @media (max-width: $screen-md-min) {
 	.collapseTable {
+		margin: auto;
+		width: 100%;
+		box-sizing: border-box;
+		display: block;
+
 		table, thead, tbody, th, td, tr {
+			box-sizing: border-box;
 			display: block;
 		}
 
@@ -16,13 +22,18 @@
 		tbody td:before {
 			content: attr(data-th);
 			display: block;
-			text-align: center;
+			font-weight: bold;
+			position: absolute;
+			left: 0;
+			padding-left: 10px;
 		}
-		tbody td {
-			text-align: center;
+		tbody td:not(:first-child) {
+			padding-left: 50%;
 		}
 
 		tbody td:first-child {
+			font-size: 1.2em;
+			text-align: center;
 			background: $base-color;
 			color: white;
 			height: 50px;

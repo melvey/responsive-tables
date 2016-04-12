@@ -14,7 +14,8 @@ var jadeData = [
 	},
 	{
 		title: 'page3',
-		className: 'scroll'
+		className: 'scroll',
+		wrapperClass: 'table-container-scroll'
 	},
 	{
 		title: 'page4',
@@ -27,6 +28,10 @@ var jadeData = [
 	{
 		title: 'page6',
 		className: 'collapseTable'
+	},
+	{
+		title: 'page7',
+		className: 'rotateTable'
 	}
 ];
 

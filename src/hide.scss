@@ -1,36 +1,32 @@
 @import "vars";
 
 table.hide {
-	.title-col {}
-	.age-col {
-		display: none;
-	}
-	.cost-col {}
-	.agree-col {
-		display: none;
-	}
-	.code-col {}
-	.text-col {
+
+	margin: auto;
+
+	.area-col,
+	.founded-col,
+	.elevation-col {
 		display: none;
 	}
 
 	/* Small devices */
 	@media (min-width: $screen-sm-min) {
-		.agree-col {
+		.area-col {
 			display: table-cell;
 		}
 	}
 
 	/* Medium devices */
 	@media (min-width: $screen-md-min) {
-		.age-col {
+		.founded-col {
 			display: table-cell;
 		}
 	}
 
 	/* Large devices */
 	@media (min-width: $screen-lg-min) {
-		.text-col {
+		.elevation-col {
 			display: table-cell;
 		}
 	}
