@@ -39,12 +39,32 @@ var jadeData = [
 		className: 'rotateTable'
 	},
 	{
-		title: 'page',
+		title: 'page8',
 		className: 'footable',
+		stylesheets: [
+			'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css',
+			'vendor/footable/css/footable.standalone.css'
+		],
 		scripts: [
+			'https://code.jquery.com/jquery-2.2.2.min.js',
 			'vendor/footable/js/footable.js'
+		],
+		injectScript: [
+			'$(document).ready(function() { $(".footable").footable(); });'
+		]
+	},
+	{
+		title: 'page9',
+		className: 'responsive',
+		stylesheets: [
+			'vendor/responsive-tables/responsive-tables.css'
+		],
+		scripts: [
+			'https://code.jquery.com/jquery-2.2.2.min.js',
+			'vendor/responsive-tables/responsive-tables.js'
 		]
 	}
+
 ];
 
 gulp.task('pages', function() {
@@ -70,4 +90,9 @@ gulp.task('includeTableLink', function() {
 		.pipe(gulp.dest('build/tableLink'));
 });
 
-gulp.task('default', ['styles', 'pages', 'includeTableLink']);
+gulp.task('libraries', function() {
+	gulp.src('./vendor/**')
+	.pipe(gulp.dest('build/vendor'));
+});
+
+gulp.task('default', ['styles', 'pages', 'includeTableLink', 'libraries']);

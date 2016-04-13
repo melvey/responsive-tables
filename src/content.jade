@@ -6,6 +6,9 @@ html
      meta(name='viewport', content='width=device-width, initial-scale=1')
      link(rel='stylesheet', type='text/css', href='style.css')
      link(rel='stylesheet', type='text/css', href='tableLink/tableLink.css')
+     if stylesheets
+       each stylesheet in stylesheets
+         link(rel='stylesheet' type='text/css', href=stylesheet)
    body
      div.header
        h1 My Responsive Page
@@ -20,9 +23,9 @@ html
               th.title-col City
               th.country-col Country
               th.pop-col Population
-              th.area-col Area
-              th.founded-col Founded/Settled
-              th.elevation-col Elevation
+              th.area-col(data-breakpoints='xs') Area
+              th.founded-col(data-breakpoints='xs sm') Founded/Settled
+              th.elevation-col(data-breakpoints='xs sm md') Elevation
           tbody
             tr
               td.title-col Darwin
